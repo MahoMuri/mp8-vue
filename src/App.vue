@@ -1,32 +1,170 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <NavBar />
     <router-view />
+    <Footer />
   </div>
 </template>
 
+<script>
+import NavBar from "@/components/NavBar.vue";
+import Footer from "@/components/Footer.vue";
+export default {
+  components: {
+    NavBar,
+    Footer,
+  },
+};
+</script>
+
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Montserrat&display=swap");
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #fbf3d9;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Caveat", cursive;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+}
+
+.jumbotron {
+  background-color: rgba(255, 255, 255, 0);
+  margin-top: 10px;
+  padding: 1rem;
+  margin-bottom: 0;
+}
+
+.sticky {
+  z-index: 10;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.jumbotron .ds-content {
+  margin-bottom: 0;
+}
+
+#welcome {
+  background-color: #fbf3d9;
+  margin-top: 30px;
+}
+
+#welcome > h1 {
+  font-size: 100px;
+}
+
+#welcome > p {
+  font-size: 20px;
+}
+
+#aboutHeader {
+  background-color: #fbf3d9;
+  margin-top: 30px;
+}
+
+#aboutHeader > h1 {
+  font-size: 100px;
+}
+
+.aboutSection > h2 {
+  font-size: 65px;
+}
+
+#orderHeader > h1 {
+  font-size: 80px;
+}
+
+#orderComplete {
   text-align: center;
-  color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+.content {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.btn {
+  background-color: antiquewhite;
+  font-family: "Montserrat", sans-serif;
+  border-color: black;
+  color: black;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.btn:hover {
+  background-color: white;
+  border-color: black;
+  color: black;
+}
+
+.btn:active {
+  background-color: #b69276;
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+}
+
+.card-title {
+  font-family: "Caveat", cursive;
+  font-size: 45px;
+}
+.card-text {
+  font-family: "Montserrat", sans-serif;
+}
+
+.card > img {
+  height: 256px;
+}
+
+.card > img:hover {
+  opacity: 80%;
+}
+
+.carousel-item > img {
+  height: 750px;
+}
+
+#coffee-content {
+  width: 100%;
+  margin-top: 30px;
+}
+
+#nav-tab {
+  text-align: center;
+}
+
+form {
+  width: 40%;
+}
+form label {
+  font-size: 16pt;
+}
+form .hidden {
+  display: none;
+  visibility: hidden;
 }
 </style>
